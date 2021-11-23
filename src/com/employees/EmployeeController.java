@@ -6,7 +6,7 @@ public class EmployeeController {
         es.register("Mary", "01/03/1998", "3rd cross Ramnagar", Designation.MANAGER, 2);
         es.register("Harry", "21/06/1995", "3rd cross Mysusu", Designation.PROJECT_LEADER, 1);
         es.register("John", "11/08/1999", "2nd street Udaynagar", Designation.TRAINEE, 5);
-        es.register("Mala", "24/03/1991", "1st block Kempadi", Designation.SOFTWARE_ENGINEER, 4);
+        es.register("Malashree", "24/03/1991", "1st block Kempadi", Designation.SOFTWARE_ENGINEER, 4);
         es.register("Kavya", "14/03/1992", "Jayanagar", Designation.MANAGER, 3);
 
         Employee e1 = new Employee();
@@ -19,7 +19,7 @@ public class EmployeeController {
         es.register(e1);
 
         Employee e2 = new Employee();
-        e2.setName("Asha");
+        e2.setName("Ashalatha");
         e2.setNumber(es.generateNumber());
         e2.setAddress("Vitla");
         e2.setDob("28/10/1996");
@@ -28,7 +28,7 @@ public class EmployeeController {
         es.register(e2);
 
         Employee e3 = new Employee();
-        e3.setName("Isha");
+        e3.setName("Ishaguptha");
         e3.setNumber(es.generateNumber());
         e3.setAddress("Kabaka");
         e3.setDob("18/10/1994");
@@ -74,5 +74,8 @@ public class EmployeeController {
         es.displayEmployees();
         System.out.println("--------Display after sorting by employee name -------\n");
         es.displaySorted();
+
+        System.out.println("--------Display Only employee names where length is less than 6-------\n");
+        es.displayShortNames();
     }
 }

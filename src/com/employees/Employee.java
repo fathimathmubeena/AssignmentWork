@@ -2,12 +2,12 @@ package com.employees;
 
 public class Employee {
 
-        String name;
-        String number;
-        String dob;
-        String address;
-        Designation designation;
-        int organisation;
+        private String name;
+        private String number;
+        private String dob;
+        private String address;
+        private Designation designation;
+        private int organisation;
 
         public String getName(){
             return name;

@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Collections;
+import java.util.stream.Collectors;
 
 public class EmployeeService {
     List <Employee> list = new ArrayList<Employee>();
@@ -90,5 +91,10 @@ public class EmployeeService {
         catch(Exception e){
             System.out.println(e+"\nException Occured!!!!!!!!\nCannot remove employee\n");
         }
+    }
+     //method to use stream API
+    public void displayShortNames(){
+        List<String> l = list.stream().filter(s->s.getName().length()<6).map(n->n.getName()).collect(Collectors.toList());
+        System.out.println(l);
     }
 }
