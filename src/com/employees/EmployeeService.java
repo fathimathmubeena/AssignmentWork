@@ -9,7 +9,7 @@ import java.util.Collections;
 
 public class EmployeeService {
     List <Employee> list = new ArrayList<Employee>();
-    public static Map<Integer,String> hm = new HashMap<Integer,String>();
+    Map<Integer,String> hm = new HashMap<Integer,String>();
     void register(String n,String d,String a,Designation des,int o){
         Employee e = new Employee();
         e.setName(n);
