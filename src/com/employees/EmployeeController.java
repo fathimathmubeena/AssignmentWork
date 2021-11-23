@@ -16,7 +16,7 @@ public class EmployeeController {
         e1.setDob("30/11/1994");
         e1.setDesignation(Designation.PROJECT_LEADER);
         e1.setOrganisation(4);
-        es.list.add(e1);
+        es.register(e1);
 
         Employee e2 = new Employee();
         e2.setName("Asha");
@@ -25,7 +25,7 @@ public class EmployeeController {
         e2.setDob("28/10/1996");
         e2.setDesignation(Designation.SOFTWARE_ENGINEER);
         e2.setOrganisation(3);
-        es.list.add(e2);
+        es.register(e2);
 
         Employee e3 = new Employee();
         e3.setName("Isha");
@@ -34,7 +34,7 @@ public class EmployeeController {
         e3.setDob("18/10/1994");
         e3.setDesignation(Designation.SOFTWARE_ENGINEER);
         e3.setOrganisation(1);
-        es.list.add(e3);
+        es.register(e3);
 
         Employee e4 = new Employee();
         e4.setName("Nidhi");
@@ -43,7 +43,7 @@ public class EmployeeController {
         e4.setDob("28/11/1996");
         e4.setDesignation(Designation.MANAGER);
         e4.setOrganisation(5);
-        es.list.add(e4);
+        es.register(e4);
 
         Employee e5 = new Employee();
         e5.setName("Rahul");
@@ -52,7 +52,7 @@ public class EmployeeController {
         e5.setDob("28/10/1996");
         e5.setDesignation(Designation.SOFTWARE_ENGINEER);
         e5.setOrganisation(2);
-        es.list.add(e5);
+        es.register(e5);
 
         es.hmOrganisation();
         System.out.println("--------Display of all employees--------\n");

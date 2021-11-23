@@ -1,9 +1,14 @@
 package com.employees;
 
-import java.util.*;
+import java.util.Random;
+import java.util.List;
+import java.util.Map;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Collections;
 
 public class EmployeeService {
-    public static List<Employee> list = new ArrayList<Employee>();
+    List <Employee> list = new ArrayList<Employee>();
     public static Map<Integer,String> hm = new HashMap<Integer,String>();
     void register(String n,String d,String a,Designation des,int o){
         Employee e = new Employee();
@@ -16,6 +21,10 @@ public class EmployeeService {
 
         list.add(e);
     }
+    void register(Employee e){
+        list.add(e);
+    }
+
     //generate random number for employee number
     public String generateNumber(){
         Random r = new Random();
