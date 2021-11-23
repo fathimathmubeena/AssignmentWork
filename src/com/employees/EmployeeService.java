@@ -1,14 +1,10 @@
 package com.employees;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Random;
-import java.util.List;
+import java.util.*;
 
 public class EmployeeService {
     public static List<Employee> list = new ArrayList<Employee>();
-    public static HashMap<Integer,String> hm = new HashMap<Integer,String>();
+    public static Map<Integer,String> hm = new HashMap<Integer,String>();
     void register(String n,String d,String a,Designation des,int o){
         Employee e = new Employee();
         e.setName(n);
@@ -36,45 +32,54 @@ public class EmployeeService {
     }
 
     //method to display all employees
-    public void displayEmployees(){
-        for(int i=0;i<list.size();i++){
-            System.out.println(list.get(i).getName());
-            System.out.println(list.get(i).getNumber());
-            System.out.println(list.get(i).getDob());
-            System.out.println(list.get(i).getAddress());
-            System.out.println(list.get(i).getDesignation());
-            int index=list.get(i).getOrganisation();
+    public void displayEmployees() {
+        list.forEach((var) -> {
+            System.out.println(var.getName());
+            System.out.println(var.getNumber());
+            System.out.println(var.getDob());
+            System.out.println(var.getAddress());
+            System.out.println(var.getDesignation());
+            int index=var.getOrganisation();
             System.out.println(hm.get(index));
             System.out.println("\n");
-        }
+        });
     }
 
     //method to display employees by sorting out their names
     public void displaySorted(){
-        Collections.sort(list,(e1, e2)->e1.getName().compareTo(e2.getName()));
+        Collections.sort(list,new SortName());
         System.out.println("Employee Name Sorting:");
-        for(int i=0;i<list.size();i++){
-            System.out.println(list.get(i).getName());
-            System.out.println(list.get(i).getNumber());
-            System.out.println(list.get(i).getDob());
-            System.out.println(list.get(i).getAddress());
-            System.out.println(list.get(i).getDesignation());
-            int index=list.get(i).getOrganisation();
+        list.forEach((var) -> {
+            System.out.println(var.getName());
+            System.out.println(var.getNumber());
+            System.out.println(var.getDob());
+            System.out.println(var.getAddress());
+            System.out.println(var.getDesignation());
+            int index=var.getOrganisation();
             System.out.println(hm.get(index));
             System.out.println("\n");
-        }
-
+        });
     }
     //update designation method
-    public void updateDesignation(int index,Designation des){
-        Employee value=list.get(index);
-        value.setDesignation(des);
+    public void updateDesignation(int index,Designation des) throws DesignationException{
+        if(index> list.size()) {
+            throw new DesignationException("You are not eligible to update");
+        }
+        else{
+            Employee value = list.get(index);
+            value.setDesignation(des);
+        }
 
     }
 
     //remove employee method
-    public void removeEmployee(int index){
-        list.remove(index);
-    }
+    public void removeEmployee(int index) {
 
+        try{
+            list.remove(index);
+        }
+        catch(Exception e){
+            System.out.println(e+"\nException Occured!!!!!!!!\nCannot remove employee\n");
+        }
+    }
 }

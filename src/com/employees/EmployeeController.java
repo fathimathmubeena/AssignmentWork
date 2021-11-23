@@ -58,10 +58,19 @@ public class EmployeeController {
         System.out.println("--------Display of all employees--------\n");
         es.displayEmployees();
         System.out.println("--------Update designation at specific index-5--------\n");
-        es.updateDesignation(5, Designation.TRAINEE);
+        try {
+            es.updateDesignation(15, Designation.TRAINEE);
+            //throw new DesignationException("You are not eligible");
+        }
+        catch(DesignationException e){
+            System.out.println(e+"\n Cannot update designation\n");
+        }
+
         es.displayEmployees();
         System.out.println("--------Display after remove method-remove at index 3-------\n");
-        es.removeEmployee(3);
+
+        es.removeEmployee(45);
+
         es.displayEmployees();
         System.out.println("--------Display after sorting by employee name -------\n");
         es.displaySorted();
